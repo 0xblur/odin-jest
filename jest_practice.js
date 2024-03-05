@@ -64,4 +64,28 @@ function caesarCipher(string, shift = 3) {
 	}
 }
 
-export { capitalize, reverseString, calculator, caesarCipher };
+function analyzeArray(arr) {
+	const obj = {
+		min: 99999999,
+		avg: 0,
+		max: 0,
+		length: 0,
+	};
+
+	for (const item of arr) {
+		if (item < obj.min) {
+			obj.min = item;
+		}
+		if (item > obj.max) {
+			obj.max = item;
+		}
+		obj.avg += item;
+		obj.length++;
+	}
+
+	obj.avg = obj.avg / obj.length;
+
+	return obj;
+}
+
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };

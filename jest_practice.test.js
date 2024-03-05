@@ -3,6 +3,7 @@ import {
 	reverseString,
 	calculator,
 	caesarCipher,
+	analyzeArray,
 } from "./jest_practice";
 
 test("capitalize first character string", () => {
@@ -32,5 +33,14 @@ describe("caesar cipher", () => {
 	});
 	test("respects mixed characters", () => {
 		expect(caesarCipher("gOdZillA#!", 3)).toBe("jRgClooD#!");
+	});
+});
+
+describe("array", () => {
+	test("minimum matches", () => {
+		expect(analyzeArray([1, 8, 3, 4, 2, 6]).min).toBe(1);
+		expect(analyzeArray([1, 8, 3, 4, 2, 6]).avg).toBe(4);
+		expect(analyzeArray([1, 8, 3, 4, 2, 6]).max).toBe(8);
+		expect(analyzeArray([1, 8, 3, 4, 2, 6]).length).toBe(6);
 	});
 });
